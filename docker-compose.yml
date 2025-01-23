@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./env/Dockerfile_local
+    image: project/frontend:local
+    healthcheck:
+      test: curl -f http://localhost || exit 1
+      interval: 30s
+      timeout: 125s
+      retries: 3
+      start_period: 30s
+    # Syntax "external_port:internal_port_of_container"
+    ports:
+      - "8080:80"
+    environment:
+      - TZ=Europe/Prague
+      - WORK_ENV=DEV

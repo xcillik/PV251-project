@@ -1,0 +1,56 @@
+.number-overview {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.number-overview__item {
+    background-color: #efefef;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    /* flex-basis: 23%; */
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+
+    .heading {
+        font-size: 1rem;
+    }
+
+    .value {
+        font-size: 2rem;
+        font-weight: bolder;
+        margin: 0.4rem 0;
+    }
+
+    .diff {
+        color: #979797;
+
+        span {
+            margin-right: 0.25rem;
+            font-weight: bolder;
+        }
+    }
+
+    .currency {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .number-overview {
+        justify-content: space-between;
+    }
+
+    .number-overview__item {
+        flex-grow: initial;
+        flex-basis: calc(50% - 0.5rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .number-overview__item {
+        flex-basis: calc(25% - 1rem);
+    }
+}
